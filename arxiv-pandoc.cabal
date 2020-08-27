@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c6a5812ec29589af56f9a5613b104f1223373cc3fbdf1a48698cca4621fa82f4
+-- hash: 90b47d4ef15070aeba99e48deee845d012624c0f9decfd8ef4c434f544b8a7a3
 
 name:           arxiv-pandoc
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      ForeignLib
       Lib
   other-modules:
       Paths_arxiv_pandoc
@@ -34,8 +35,12 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , bytestring >=0.10
+    , directory
     , pandoc >=2.7
+    , path
     , text >=1.2.3.0
+    , turtle
   default-language: Haskell2010
 
 executable arxiv-pandoc-exe
@@ -48,8 +53,12 @@ executable arxiv-pandoc-exe
   build-depends:
       arxiv-pandoc
     , base >=4.7 && <5
+    , bytestring >=0.10
+    , directory
     , pandoc >=2.7
+    , path
     , text >=1.2.3.0
+    , turtle
   default-language: Haskell2010
 
 test-suite arxiv-pandoc-test
@@ -63,6 +72,10 @@ test-suite arxiv-pandoc-test
   build-depends:
       arxiv-pandoc
     , base >=4.7 && <5
+    , bytestring >=0.10
+    , directory
     , pandoc >=2.7
+    , path
     , text >=1.2.3.0
+    , turtle
   default-language: Haskell2010

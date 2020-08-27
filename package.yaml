@@ -21,8 +21,15 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- bytestring >= 0.10
+- directory
 - text >= 1.2.3.0
 - pandoc >= 2.7
+- path
+# - tar >= 0.5.1
+- turtle
+# - zio
+# - zlib >= 0.6.2
 
 library:
   source-dirs: src

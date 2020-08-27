@@ -4,17 +4,25 @@ let
 
   inherit (nixpkgs) pkgs;
 
-  f = { mkDerivation, base, hpack, pandoc, stdenv, text }:
+  f = { mkDerivation, base, bytestring, directory, hpack, pandoc
+      , path, stdenv, text, turtle
+      }:
       mkDerivation {
         pname = "arxiv-pandoc";
         version = "0.1.0.0";
         src = ./.;
         isLibrary = true;
         isExecutable = true;
-        libraryHaskellDepends = [ base pandoc text ];
+        libraryHaskellDepends = [
+          base bytestring directory pandoc path text turtle
+        ];
         libraryToolDepends = [ hpack ];
-        executableHaskellDepends = [ base pandoc text ];
-        testHaskellDepends = [ base pandoc text ];
+        executableHaskellDepends = [
+          base bytestring directory pandoc path text turtle
+        ];
+        testHaskellDepends = [
+          base bytestring directory pandoc path text turtle
+        ];
         prePatch = "hpack";
         homepage = "https://github.com/githubuser/arxiv-pandoc#readme";
         license = stdenv.lib.licenses.bsd3;
