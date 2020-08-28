@@ -5,7 +5,7 @@ let
   inherit (nixpkgs) pkgs;
 
   f = { mkDerivation, base, bytestring, directory, hpack, pandoc
-      , path, stdenv, text, turtle
+      , path, path-io, stdenv, text, turtle
       }:
       mkDerivation {
         pname = "arxiv-pandoc";
@@ -14,14 +14,14 @@ let
         isLibrary = true;
         isExecutable = true;
         libraryHaskellDepends = [
-          base bytestring directory pandoc path text turtle
+          base bytestring directory pandoc path path-io text turtle
         ];
         libraryToolDepends = [ hpack ];
         executableHaskellDepends = [
-          base bytestring directory pandoc path text turtle
+          base bytestring directory pandoc path path-io text turtle
         ];
         testHaskellDepends = [
-          base bytestring directory pandoc path text turtle
+          base bytestring directory pandoc path path-io text turtle
         ];
         prePatch = "hpack";
         homepage = "https://github.com/githubuser/arxiv-pandoc#readme";

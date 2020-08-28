@@ -23,9 +23,11 @@ dependencies:
 - base >= 4.7 && < 5
 - bytestring >= 0.10
 - directory
+- exceptions
 - text >= 1.2.3.0
 - pandoc >= 2.7
 - path
+- path-io
 # - tar >= 0.5.1
 - turtle
 # - zio

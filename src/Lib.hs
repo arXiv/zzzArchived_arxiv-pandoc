@@ -1,5 +1,5 @@
 module Lib
-    ( latexToTxt
+    ( latexDirToTex, latexToTxt
     ) where
 
 import qualified Data.ByteString as BS
@@ -31,3 +31,9 @@ getMainTexDocs srcDir = do
 
   where
     dclStr = T.pack "\\documentclass"
+
+latexDirToTex :: Path b Dir -> IO T.Text
+latexDirToTex fp = do -- bracket chdir ...
+  mainDocs <- getMainTexDocs fp
+  docTxts <- traverse latexToTxt mainDocs
+  pure $ T.intercalate (T.pack "\n") docTxts
