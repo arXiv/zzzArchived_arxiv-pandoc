@@ -28,7 +28,7 @@ cabal install --overwrite-policy=always --installdir=$HOME/.local/bin
 
 ## Packaging
 
-## Docker
+### Docker
 
 Build the image if necessary:
 
@@ -36,11 +36,18 @@ Build the image if necessary:
 docker build -t arxiv-pandoc .
 ```
 
+(Set `DHUB_PREFIX` as below to use the locally built docker image.)
+
 ```
 DHUB_PREFIX="" ./run-docker-env.sh bash
+cabal clean
+cabal install --install-method=copy --enable-executable-static --overwrite-policy=always --installdir=./bin
 ```
 
-## packaging with nix-bundle (WIP)
+`/bin` should now contain two executables, one statically linked,
+the other dynamically linked.
+
+### packaging with nix-bundle (WIP)
 
 In addition to the build instructions:
 
@@ -69,7 +76,7 @@ The next step [currently fails](https://github.com/matthewbauer/nix-bundle/issue
 $ nix-bundle '(pkgs.haskell.packages.ghc865.callPackage ./package.nix {})' /bin/arxiv-pandoc-exe
 ```
 
-## Packaging with static-haskell-nix (WIP)
+### Packaging with static-haskell-nix (WIP)
 
 I haven't tried [static-haskell-nix](https://github.com/nh2/static-haskell-nix) yet, partly as it looks like it
 would require manual editing of the generated `package.nix` (though

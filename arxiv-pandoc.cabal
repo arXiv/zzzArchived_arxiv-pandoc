@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e6c44d94bd696d48ee897994d375f4c24abc47eee6a4cc56103755e25f78d623
+-- hash: afe53f42e0676ead84af43d3d89095d646bed2696002b1556f92cab6778e3119
 
 name:           arxiv-pandoc
 version:        0.1.0.0
@@ -71,7 +71,9 @@ executable arxiv-pandoc-static
       Paths_arxiv_pandoc
   hs-source-dirs:
       app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -static -threaded -rtsopts -with-rtsopts=-N
+  cc-options: -static
+  ld-options: -static
   build-depends:
       arxiv-pandoc
     , base >=4.7 && <5
