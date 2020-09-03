@@ -47,6 +47,9 @@ cabal install --install-method=copy --enable-executable-static --overwrite-polic
 `/bin` should now contain two executables, one statically linked,
 the other dynamically linked.
 
+To avoid permission issues, run `cabal clean` again from the Docker
+environment after the build has succeeded.
+
 ### packaging with nix-bundle (WIP)
 
 In addition to the build instructions:
