@@ -47,6 +47,16 @@ executables:
     dependencies:
     - arxiv-pandoc
 
+  arxiv-pandoc-static:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - arxiv-pandoc
+  
 tests:
   arxiv-pandoc-test:
     main:                Spec.hs

@@ -3,7 +3,6 @@ module Main where
 import Control.Monad.Catch (MonadThrow)
 import Data.List (isPrefixOf)
 import Data.Maybe (listToMaybe)
-import ForeignLib (chdir)
 import Lib
 import Path
 import Path.IO
