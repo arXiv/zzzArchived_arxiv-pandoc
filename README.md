@@ -1,5 +1,38 @@
 # arxiv-pandoc
-Pandoc-based library and Python API wrappers for extracting text from documents (and maybe, performing doc conversions)
+
+[Pandoc](https://pandoc.org/)-based executable for converting
+LaTeX-based arXiv documents to text.
+
+
+## Usage
+
+`arxiv-pandoc-static` emits the extracted text to `stdout`.
+
+If given no arguments, `arxiv-pandoc-static` assumes it is in a directory with
+the extracted source files.
+
+```
+arxiv-pandoc-static > out.txt
+```
+
+However, the path to the extracted directory can also be given, e.g.
+
+```
+arxiv-pandoc-static /path/to/some_arXiv_doc > out.txt
+```
+
+### Export LANG
+
+If you encounter an error along the lines of
+`<stdout>: commitAndReleaseBuffer: invalid argument (invalid character)`,
+you [may need to](https://github.com/simonmichael/hledger/blob/0751536d255cddc80513283f57f6c8f9f85f85d5/hledger/hledger.info#L914-L919)
+set `LANG=C.UTF-8` before running, e.g.:
+
+```
+LANG=C.UTF-8 /path/to/arxiv-pandoc-static > out.txt
+```
+
+or just `export LANG=C.UTF-8` once.
 
 ## Building
 
