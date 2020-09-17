@@ -28,7 +28,6 @@ dependencies:
 - directory
 - exceptions
 - iconv
-- magic
 - text >= 1.2.3.0
 - pandoc >= 2.10 && < 2.11
 - path

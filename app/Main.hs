@@ -4,7 +4,6 @@ import Control.Monad.Catch (MonadThrow)
 import Data.List (isPrefixOf)
 import Data.Maybe (listToMaybe)
 import Lib
-import Lib (magicInit)
 import Path
 import Path.IO
 import System.Environment (getArgs)
@@ -19,9 +18,8 @@ main = do
   srcDir <- case argMay of
     Just sd -> autoResolveDir sd
     Nothing -> getCurrentDir
-  magic <- magicInit
   cwd <- pwd
-  txt <- latexDirToTex magic srcDir
+  txt <- latexDirToTex srcDir
   TIO.putStrLn txt
 
 

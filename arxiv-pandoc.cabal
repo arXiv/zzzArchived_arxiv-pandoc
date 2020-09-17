@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 53160ab54f6119d04b88f27eb5f48861ee9e46e158b5be1d132959b8b0a7d3f8
+-- hash: bd9e7ca3c26f9cf6b43e6432f65aee2a42798d4d886a200d8b1096406de44560
 
 name:           arxiv-pandoc
 version:        0.1.0.0
@@ -42,7 +42,6 @@ library
     , directory
     , exceptions
     , iconv
-    , magic
     , pandoc >=2.10 && <2.11
     , path
     , path-io
@@ -67,7 +66,6 @@ executable arxiv-pandoc-exe
     , directory
     , exceptions
     , iconv
-    , magic
     , pandoc >=2.10 && <2.11
     , path
     , path-io
@@ -94,7 +92,6 @@ executable arxiv-pandoc-static
     , directory
     , exceptions
     , iconv
-    , magic
     , pandoc >=2.10 && <2.11
     , path
     , path-io
@@ -120,7 +117,6 @@ test-suite arxiv-pandoc-test
     , directory
     , exceptions
     , iconv
-    , magic
     , pandoc >=2.10 && <2.11
     , path
     , path-io
