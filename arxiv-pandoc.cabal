@@ -1,11 +1,10 @@
-cabal-version: 1.12
-
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.28.2.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: bd9e7ca3c26f9cf6b43e6432f65aee2a42798d4d886a200d8b1096406de44560
+-- hash: cc1b58ae68ddebce7121926604f14f06de40f10e83c1aadb178d91e084c92920
 
+cabal-version:  >= 1.10
 name:           arxiv-pandoc
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/arxiv-pandoc#readme>
@@ -18,8 +17,8 @@ license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
-    README.md
     ChangeLog.md
+    README.md
 
 source-repository head
   type: git

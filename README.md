@@ -36,6 +36,18 @@ or just `export LANG=C.UTF-8` once.
 
 ## Building
 
+### Docker
+
+See the *Packaging* section below on how to get the appropriate docker
+container running. Once int he container:
+
+```
+hpack
+cabal build
+```
+
+### Nix
+
 First, load the necessary build tools:
 
 ```

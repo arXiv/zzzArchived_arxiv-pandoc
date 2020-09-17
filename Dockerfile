@@ -7,7 +7,7 @@ WORKDIR /opt/project
 RUN apt update -y && apt install -y --no-install-recommends && apt clean
 
 RUN apt update -y && apt install -y --no-install-recommends \
-     hpack libmagic-dev \
+     hpack libmagic-dev libyaml-dev \
   && apt clean
 
 RUN cabal update
