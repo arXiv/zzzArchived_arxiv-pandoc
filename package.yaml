@@ -21,11 +21,16 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
-- bytestring >= 0.10
+- bytestring >= 0.10 && < 0.11
+- base16-bytestring == 0.1.1.7 # needed for text-conversions 0.3.0
+- bytedump
+- charsetdetect
 - directory
 - exceptions
+- iconv
+- magic
 - text >= 1.2.3.0
-- pandoc >= 2.7
+- pandoc >= 2.10 && < 2.11
 - path
 - path-io
 # - tar >= 0.5.1

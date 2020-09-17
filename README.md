@@ -48,8 +48,10 @@ Then, build the project
 $ hpack
 $ cabal2nix --shell . > package-shell.nix
 $ nix-shell package-shell.nix
-$ cabal build
+$ cabal build arxiv-pandoc-exe
 ```
+We currently omit doing a full `cabal build` in Nix due to the
+static build having problems there.
 
 ## Installing
 

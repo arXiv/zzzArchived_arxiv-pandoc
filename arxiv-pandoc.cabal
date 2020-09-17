@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: afe53f42e0676ead84af43d3d89095d646bed2696002b1556f92cab6778e3119
+-- hash: 53160ab54f6119d04b88f27eb5f48861ee9e46e158b5be1d132959b8b0a7d3f8
 
 name:           arxiv-pandoc
 version:        0.1.0.0
@@ -35,10 +35,15 @@ library
       src
   build-depends:
       base >=4.7 && <5
-    , bytestring >=0.10
+    , base16-bytestring ==0.1.1.7
+    , bytedump
+    , bytestring >=0.10 && <0.11
+    , charsetdetect
     , directory
     , exceptions
-    , pandoc >=2.7
+    , iconv
+    , magic
+    , pandoc >=2.10 && <2.11
     , path
     , path-io
     , text >=1.2.3.0
@@ -55,10 +60,15 @@ executable arxiv-pandoc-exe
   build-depends:
       arxiv-pandoc
     , base >=4.7 && <5
-    , bytestring >=0.10
+    , base16-bytestring ==0.1.1.7
+    , bytedump
+    , bytestring >=0.10 && <0.11
+    , charsetdetect
     , directory
     , exceptions
-    , pandoc >=2.7
+    , iconv
+    , magic
+    , pandoc >=2.10 && <2.11
     , path
     , path-io
     , text >=1.2.3.0
@@ -77,10 +87,15 @@ executable arxiv-pandoc-static
   build-depends:
       arxiv-pandoc
     , base >=4.7 && <5
-    , bytestring >=0.10
+    , base16-bytestring ==0.1.1.7
+    , bytedump
+    , bytestring >=0.10 && <0.11
+    , charsetdetect
     , directory
     , exceptions
-    , pandoc >=2.7
+    , iconv
+    , magic
+    , pandoc >=2.10 && <2.11
     , path
     , path-io
     , text >=1.2.3.0
@@ -98,10 +113,15 @@ test-suite arxiv-pandoc-test
   build-depends:
       arxiv-pandoc
     , base >=4.7 && <5
-    , bytestring >=0.10
+    , base16-bytestring ==0.1.1.7
+    , bytedump
+    , bytestring >=0.10 && <0.11
+    , charsetdetect
     , directory
     , exceptions
-    , pandoc >=2.7
+    , iconv
+    , magic
+    , pandoc >=2.10 && <2.11
     , path
     , path-io
     , text >=1.2.3.0
